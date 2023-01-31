@@ -6,10 +6,23 @@
 
 export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   // Your code goes here...
-
+  let accounts = [];
+  for(let i = 0; i < array.length; i++){
+    let sum = 0;
+    if(!array[i].deposits) {
+      accounts.push(array[i]);
+      continue;
+    }
+    for(let n = 0; n < array[i].deposits.length; n++){
+      sum += array[i].deposits[n];
+    }
+    if (sum < 2000) {
+        accounts.push(array[i]);
+    }
+  }
+  return accounts;
 }
-
-
+  
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

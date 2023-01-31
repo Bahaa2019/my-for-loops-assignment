@@ -6,9 +6,14 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  const clientName = [];
+  for(let i = 0 ; i < array.length; i++){
+    if(array[i].name){
+      clientName.push(array[i].name);
+    }
+  }
+  return clientName;
 }
-
 
 
 // === TEST YOURSELF ===

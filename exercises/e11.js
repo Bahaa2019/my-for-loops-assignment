@@ -5,8 +5,17 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
-}
+    const totalWithdrawal = [];
+    for(let i = 0 ; i < array.length; i++){
+      if(array[i].withdrawals){
+        const sum = array[i].withdrawals.reduce((acc, val) => acc + val, 0);
+        totalWithdrawal.push(sum);
+      } else {
+        totalWithdrawal.push(0)
+      }
+    }
+    return totalWithdrawal;
+  }
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

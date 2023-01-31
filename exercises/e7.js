@@ -5,9 +5,18 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
-
+  let lowestBalance = array[0].balance;
+  let leastClients = [array[0]];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i].balance < lowestBalance || array[i].balance !== 0) {
+      lowestBalance = array[i].balance;
+      leastClients = [array[i]];
+    } else if (array[i].balance === lowestBalance) {
+      greatestClients.push(array[i]);
+    }
+  }
+  return leastClients;
 }
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
 // If the test has all tests passed, switch to the next exercise file
